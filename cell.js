@@ -16,7 +16,7 @@ Cell = function() {
 			this.harvest();
 		} else {
 			var cell = this;
-			setTimeout(function(){cell.grow()}, 1000);
+			setTimeoutSecond(function(){cell.grow()}, 5);
 		}
 	}
 	this.harvest = function() {
@@ -26,4 +26,9 @@ Cell = function() {
 };
 
 test_cell = new Cell();
+<<<<<<< HEAD
 test_cell.plant('картоха')
+=======
+test_cell.plant('картоха')
+
+>>>>>>> miow
