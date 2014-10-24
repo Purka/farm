@@ -26,9 +26,5 @@ Cell = function() {
 };
 
 test_cell = new Cell();
-<<<<<<< HEAD
-test_cell.plant('картоха')
-=======
 test_cell.plant('картоха')
 
->>>>>>> miow
