@@ -1,0 +1,7 @@
+storage = {
+
+		'potato': 1
+	};
+
+
+

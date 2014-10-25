@@ -22,8 +22,8 @@ Crop = function(name){
 
 }
 
-var potato = new Crop('картоха')
-var banana = new Crop('бананы')
-var wheat = new Crop('пшеница')
-var cat = new Crop('кот')
+var potato = new Crop('potato')
+var banana = new Crop('banana')
+var wheat = new Crop('wheat')
+var cat = new Crop('cat')
 
