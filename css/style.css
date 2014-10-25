@@ -1,4 +1,8 @@
-.cell {
+body { 
+    background: url(http://www.wallgrad.ru/_ph/7/647213062.jpg?1411984629)   
+    no-repeat;
+    background-size: 100%;
+}.cell {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
@@ -11,8 +15,11 @@
 }
 .farm {
 	display: inline-block;
-}body { 
-            background: url(http://www.wallgrad.ru/_ph/7/647213062.jpg?1411984629)   
-            no-repeat;
-            background-size: 100%;
+}
+.indicator {
+	border: 1px solid black;
+	padding: 2px;
+}
+.indicators {
+	float: right;
 }

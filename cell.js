@@ -10,6 +10,7 @@ Cell = function(x, y) {
 		console.log("Высадили "+this.crop.name+' на '+this.x+';'+this.y);
 		this.crop.cell = this;
 		this.crop.grow();
+		draw_indicators();
 	};
 	this.harvest = function() {
 		console.log('harvest')
@@ -17,6 +18,7 @@ Cell = function(x, y) {
 		console.log("Теперь у тебя " + storage[this.crop.name] + " " + this.crop.name);
 		delete this.crop;
 		this.draw();
+		draw_indicators();
 	};
 	this.getCode = function() {
 		return '<div data-x='+this.x+' data-y='+this.y+' class="cell">'+'('+this.x+';'+this.y+')'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
