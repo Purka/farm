@@ -2,12 +2,13 @@ Farm = function(x, y) {
 	this.x = x;
 	this.y = y;
 	this.cells = [];
-	var row = [];
-	for(var width = 0; width<this.x; width++) {
-		row.push(new Cell());
-	};
+	
 	for(var height = 0; height<this.y; height++) {
-		this.cells.push(row);
+		this.cells[height] = [];	
+		for(var width = 0; width<this.x; width++) {		
+			this.cells[height].push(new Cell(width, height));
+			console.log(this.cells[height][width]);
+		};
 	};
 	this.getCode = function() {
 		var code = '<div class="farm">';

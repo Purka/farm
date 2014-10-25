@@ -1,5 +1,7 @@
-Cell = function() {
+Cell = function(x, y) {
 	this.crop = null;
+	this.x = x;
+	this.y = y;
 
 	this.plant = function(crop) {
 		this.crop = crop;
@@ -11,7 +13,7 @@ Cell = function() {
 		this.crop = null;
 	};
 	this.getCode = function() {
-		return '<div class="cell">'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
+		return '<div data-x='+this.x+' data-y='+this.y+' class="cell">'+'('+this.x+';'+this.y+')'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
 	}
 };
 
