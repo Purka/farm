@@ -3,12 +3,11 @@ Farm = function(x, y) {
 	this.y = y;
 	this.cells = [];
 	
-	for(var height = 0; height<this.y; height++) {
-		this.cells[height] = [];	
-		for(var width = 0; width<this.x; width++) {		
-			this.cells[height].push(new Cell(width, height));
-			console.log(this.cells[height][width]);
-		};
+	for(var height = 0; height < this.y; height++) {
+		this.cells[height] = [];
+		for(var width = 0; width < this.x; width++) {
+			this.cells[height].push(new Cell(height, width))
+		}
 	};
 	this.getCode = function() {
 		var code = '<div class="farm">';
@@ -23,6 +22,7 @@ Farm = function(x, y) {
 		return code;
 	};
 	this.draw = function() {
+		console.log('farm draw')
 		$(".main").html(this.getCode());
 	}
 }

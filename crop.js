@@ -5,6 +5,7 @@ Crop = function(name){
 	
 	this.grow = function() {
 		this.stage++;
+		this.cell.draw();
 		console.log("стадия роста - "+this.stage);
 		if(this.stage >= 4) {
 			console.log(this.name+" вырос и собран");
@@ -15,8 +16,8 @@ Crop = function(name){
 		};
 	};
 	this.getCode = function() {
-		return this.name;
-	}
+		return this.name+' '+this.stage;
+	};
 }
 
 var potato = new Crop('картоха')

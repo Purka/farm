@@ -4,16 +4,22 @@ Cell = function(x, y) {
 	this.y = y;
 
 	this.plant = function(crop) {
-		this.crop = crop;
-		console.log("Высадили "+this.crop.name);
+		if(this.crop){return null};
+		this.crop = clone(crop);
+		console.log("Высадили "+this.crop.name+' на '+this.x+';'+this.y);
 		this.crop.cell = this;
 		this.crop.grow();
 	};
 	this.harvest = function() {
-		this.crop = null;
+		console.log('harvest')
+		delete this.crop;
+		this.draw();
 	};
 	this.getCode = function() {
 		return '<div data-x='+this.x+' data-y='+this.y+' class="cell">'+'('+this.x+';'+this.y+')'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
-	}
+	};
+	this.draw = function() {
+		$('[data-x='+this.x+'][data-y='+this.y+']').html(this.getCode());
+	};
 };
 
