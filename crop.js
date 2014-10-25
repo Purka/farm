@@ -1,6 +1,7 @@
 Crop = function(name){
 	this.stage = 0;
 	this.name = name;
+	this.cell = null;
 
 	this.grow = function() {
 		this.stage++;
@@ -8,16 +9,13 @@ Crop = function(name){
 		console.log("стадия роста - "+this.stage)
 		if (this.stage >= 4) {
 			console.log(this.name+" вырос и собран");
-			this.harvest();
+			this.cell.harvest();
 		} else {
 			var cell = this;
 			setTimeoutSecond(function(){cell.grow()}, 1);
 		}
 	}
 
-	this.harvest = function() {
-		this.name = null;
-	}
 }
 
 var potato = new Crop('картоха')
