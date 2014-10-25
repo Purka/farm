@@ -7,7 +7,7 @@ Cell = function(x, y) {
 		if(this.crop || storage[crop.name] <= 0){return null};
 		this.crop = clone(crop);
 		storage[crop.name]--;
-		console.log("Высадили "+this.crop.name+' на '+this.x+';'+this.y);
+		console.log("Высадили " + this.crop.name + ' на ' + this.x + ';' + this.y);
 		this.crop.cell = this;
 		this.crop.grow();
 		draw_indicators();
@@ -21,10 +21,10 @@ Cell = function(x, y) {
 		draw_indicators();
 	};
 	this.getCode = function() {
-		return '<div data-x='+this.x+' data-y='+this.y+' class="cell">'+'('+this.x+';'+this.y+')'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
+		return '<div data-x=' + this.x + ' data-y=' + this.y + ' class="cell">' + '(' + this.x + ';' + this.y + ')' + (this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
 	};
 	this.draw = function() {
-		$('[data-x='+this.x+'][data-y='+this.y+']').html(this.getCode());
+		$('[data-x=' + this.x + '][data-y=' + this.y + ']').html(this.getCode());
 	};
 };
 

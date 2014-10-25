@@ -6,9 +6,9 @@ Crop = function(name){
 	this.grow = function() {
 		this.stage++;
 		this.cell.draw();
-		console.log("стадия роста - "+this.stage);
+		console.log("стадия роста - " + this.stage);
 		if(this.stage >= 4) {
-			console.log(this.name+" вырос и собран");
+			console.log(this.name + " вырос и собран");
 			this.cell.harvest();
 		} else {
 			var cell = this;
