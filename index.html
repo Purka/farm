@@ -13,6 +13,7 @@
         <div class="main"></div>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="storage.js"></script>
+        <script src="menu.js"></script>
         <script src="core.js"></script>
         <script src="time.js"></script>
 		<script src="crop.js"></script>
@@ -20,13 +21,25 @@
         <script src="farm.js"></script>
         <script>
             $(document).ready(function() {farm.draw});
-            /*
-            */
-            $(".cell").on('click', function(){
+            $('html').click(function(event) { 
+                   if(!$(event.target).closest('.resource').length && !$(event.target).closest('.cell').length ){
+                        menu.active_item = null;      
+                        console.log('active_item '+menu.active_item);
+                   }
+            });
+            $(".cell").on('click', function(event){
+                if(!menu.active_item){console.log('there is no active item');return null};
                 var x = $(this).data('x');
                 var y = $(this).data('y');
                 console.log('clicked on '+x+';'+y);
-                farm.cells[x][y].plant(crops['potato']);
+                var crop = clone(crops[menu.active_item]);
+                console.log(crop);
+                farm.cells[x][y].plant(crop);
+            });
+            $(document).on('click', '.resource', function(event){
+                var name = $(this).data('crop');
+                menu.active_item = name;      
+                console.log('active_item '+menu.active_item);
             });
         </script>
     </body>

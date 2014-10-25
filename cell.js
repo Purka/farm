@@ -4,14 +4,15 @@ Cell = function(x, y) {
 	this.y = y;
 	
 	this.plant = function(crop) {
+		console.log(crop)
 		if(this.crop || storage.crops[crop.name] <= 0){return null};
 		this.crop = clone(crop);
 		storage.crops[crop.name]--;
 		console.log("Высадили " + this.crop.name + ' на ' + this.x + ';' + this.y);
 		this.crop.cell = this;
 		this.crop.grow();
-		storage.drawIndicators();
-		storage.drawMenu();
+		menu.drawIndicators();
+		menu.draw();
 	};
 	this.harvest = function() {
 		console.log('harvest')
@@ -19,8 +20,8 @@ Cell = function(x, y) {
 		console.log("Теперь у тебя " + storage.crops[this.crop.name] + " " + this.crop.name);
 		delete this.crop;
 		this.draw();
-		storage.drawIndicators();
-		storage.drawMenu();
+		menu.drawIndicators();
+		menu.draw();
 	};
 	this.getCode = function() {
 		return '<div data-x=' + this.x + ' data-y=' + this.y + ' class="cell">' + '(' + this.x + ';' + this.y + ')' + (this.crop ? this.crop.getCode() : 'Пусто')+'</div>'

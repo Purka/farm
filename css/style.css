@@ -26,7 +26,7 @@ body {
 .indicator_value {
 	position: relative;
 	bottom: 0.2em;
-	right: 0.7em;
+	right: 1em;
 }
 .menu {
 	float: left;

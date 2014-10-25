@@ -29,5 +29,5 @@ Farm = function(x, y) {
 
 farm = new Farm(3,3);
 farm.draw();
-storage.drawIndicators();
-storage.drawMenu();
+menu.drawIndicators();
+menu.draw();
