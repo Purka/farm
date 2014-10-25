@@ -2,6 +2,7 @@ Crop = function(name){
 	this.stage = 0;
 	this.name = name;
 	this.cell = null;
+	
 	this.grow = function() {
 		this.stage++;
 		console.log("стадия роста - "+this.stage);
