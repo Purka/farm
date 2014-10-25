@@ -23,8 +23,9 @@ Crop = function(name, image){
 
 }
 
-var potato = new Crop('potato', 'http://fermaspb.ru/uploads/.thumbs/images/goods/res-4d43b90e63868.jpg')
-var banana = new Crop('banana', 'http://www.pl.all.biz/img/pl/catalog/middle/199459.jpeg?rrr=1')
-var wheat = new Crop('wheat', 'http://images.tomas.by/i/firms/49/23/23585/pshenica-dlya-prorashchivaniya-0-5-kg_074050d285145c0_100x100.jpg')
-var cat = new Crop('cat', 'http://img-fotki.yandex.ru/get/9317/27433797.89/0_8d647_1716eb7d_-1-orig')
-
+crops = {
+	'potato' : new Crop('potato', 'http://fermaspb.ru/uploads/.thumbs/images/goods/res-4d43b90e63868.jpg'),
+	'banana' : new Crop('banana', 'http://www.pl.all.biz/img/pl/catalog/middle/199459.jpeg?rrr=1'),
+	'wheat' : new Crop('wheat', 'http://images.tomas.by/i/firms/49/23/23585/pshenica-dlya-prorashchivaniya-0-5-kg_074050d285145c0_100x100.jpg'),
+	'cat' : new Crop('cat', 'http://img-fotki.yandex.ru/get/9317/27433797.89/0_8d647_1716eb7d_-1-orig')
+}

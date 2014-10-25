@@ -23,6 +23,11 @@ body {
 .indicators {
 	float: right;
 }
+.indicator_value {
+	position: relative;
+	bottom: 0.2em;
+	right: 0.7em;
+}
 .menu {
 	float: left;
 }
