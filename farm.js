@@ -27,5 +27,5 @@ Farm = function(x, y) {
 	}
 }
 
-farm = new Farm(5,4);
+farm = new Farm(3,3);
 farm.draw();

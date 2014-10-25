@@ -15,12 +15,15 @@ Crop = function(name){
 			setTimeoutSecond(function(){cell.grow()}, 1);
 		};
 	};
-	this.getCode = function() {
-		return this.name+' '+this.stage;
-	};
+
+	this.getCode = function() { 
+		return (this.name + " " + this.stage);
+	}
+
 }
 
 var potato = new Crop('картоха')
 var banana = new Crop('бананы')
 var wheat = new Crop('пшеница')
 var cat = new Crop('кот')
+
