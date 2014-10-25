@@ -10,5 +10,8 @@ Cell = function() {
 	this.harvest = function() {
 		this.crop = null;
 	};
+	this.getCode = function() {
+		return '<div class="cell">'+(this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
+	}
 };
 

@@ -9,9 +9,22 @@ Farm = function(x, y) {
 	for(var height = 0; height<this.y; height++) {
 		this.cells.push(row);
 	};
-	this.addCell = function() {
-		return this.cells.push(new Cell());
+	this.getCode = function() {
+		var code = '<div class="farm">';
+		this.cells.forEach(function(row, index) {
+			code += '<div class="row">';
+			row.forEach(function(cell, index) {
+				code += cell.getCode();
+			});
+			code += '</div>';
+		});
+		code += '</div>';
+		return code;
+	};
+	this.draw = function() {
+		$(".main").html(this.getCode());
 	}
 }
 
-farm = new Farm(2,2);
+farm = new Farm(5,4);
+farm.draw();
