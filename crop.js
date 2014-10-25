@@ -1,0 +1,26 @@
+Crop = function(name){
+	this.stage = 0;
+	this.name = name;
+
+	this.grow = function() {
+		this.stage++;
+		console.log(this);
+		console.log("стадия роста - "+this.stage)
+		if (this.stage >= 4) {
+			console.log(this.name+" вырос и собран");
+			this.harvest();
+		} else {
+			var cell = this;
+			setTimeoutSecond(function(){cell.grow()}, 1);
+		}
+	}
+
+	this.harvest = function() {
+		this.name = null;
+	}
+}
+
+var potato = new Crop('картоха')
+var banana = new Crop('бананы')
+var wheat = new Crop('пшеница')
+var cat = new Crop('кот')
