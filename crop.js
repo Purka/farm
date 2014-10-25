@@ -2,20 +2,20 @@ Crop = function(name){
 	this.stage = 0;
 	this.name = name;
 	this.cell = null;
-
 	this.grow = function() {
 		this.stage++;
-		console.log(this);
-		console.log("стадия роста - "+this.stage)
-		if (this.stage >= 4) {
+		console.log("стадия роста - "+this.stage);
+		if(this.stage >= 4) {
 			console.log(this.name+" вырос и собран");
 			this.cell.harvest();
 		} else {
 			var cell = this;
 			setTimeoutSecond(function(){cell.grow()}, 1);
-		}
+		};
+	};
+	this.getCode = function() {
+		return this.name;
 	}
-
 }
 
 var potato = new Crop('картоха')
