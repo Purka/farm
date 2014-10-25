@@ -24,7 +24,8 @@ Cell = function(x, y) {
 		menu.draw();
 	};
 	this.getCode = function() {
-		return '<div data-x=' + this.x + ' data-y=' + this.y + ' class="cell">' + '(' + this.x + ';' + this.y + ')' + (this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
+		return '<div data-x=' + this.x + ' data-y=' + this.y + ' class="cell">' 
+		+ '(' + this.x + ';' + this.y + ')' + (this.crop ? this.crop.getCode() : 'Пусто')+'</div>'
 	};
 	this.draw = function() {
 		$('[data-x=' + this.x + '][data-y=' + this.y + ']').html(this.getCode());

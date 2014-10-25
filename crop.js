@@ -1,4 +1,4 @@
-Crop = function(name, image){
+Crop = function(name, image) {
 	this.stage = 0;
 	this.name = name;
 	this.cell = null;
@@ -11,7 +11,8 @@ Crop = function(name, image){
 		if(this.stage >= 4) {
 			console.log(this.name + " вырос и собран");
 			this.cell.harvest();
-		} else {
+		} 
+		else {
 			var cell = this;
 			setTimeoutSecond(function(){cell.grow()}, 1);
 		};
