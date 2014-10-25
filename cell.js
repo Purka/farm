@@ -2,16 +2,19 @@ Cell = function(x, y) {
 	this.crop = null;
 	this.x = x;
 	this.y = y;
-
+	
 	this.plant = function(crop) {
-		if(this.crop){return null};
+		if(this.crop || potato_count <= 0){return null};
 		this.crop = clone(crop);
+		potato_count--;
 		console.log("Высадили "+this.crop.name+' на '+this.x+';'+this.y);
 		this.crop.cell = this;
 		this.crop.grow();
 	};
 	this.harvest = function() {
 		console.log('harvest')
+		potato_count +=3;
+		console.log("Теперь у тебя " + potato_count + " " + this.crop.name);
 		delete this.crop;
 		this.draw();
 	};
@@ -23,3 +26,4 @@ Cell = function(x, y) {
 	};
 };
 
+var potato_count = 1;
