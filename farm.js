@@ -27,7 +27,7 @@ Farm = function(x, y) {
 	}
 }
 
-farm = new Farm(2,2);
+farm = new Farm(3,3);
 farm.draw();
 menu.drawIndicators();
 menu.draw();
