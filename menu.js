@@ -8,12 +8,19 @@ Menu = function() {
 		$(".indicators").html(code);
 	};
 	this.draw = function() {
+		var active = this.active_item;
 		var code = '';
 		$.each(storage.crops, function(resource, value) {
 			var url = crops[resource].image;
-			code += '<div data-crop="'+resource+'" class="resource"><img src ="'+url+'"></img><span class="indicator_value">'+value+'</span></div>';			
+			if(active == resource) {
+				console.log(active + ' active')
+				code += '<div data-crop="'+resource+'" class="resource active_menu '+resource+'"><span class="indicator_value">'+value+'</span></div>';
+			} else {
+					code += '<div data-crop="'+resource+'"  class="resource '+resource+'"><span class="indicator_value">'+value+'</span></div>';
+			}			
 		});
 		$(".menu").html(code);
 	}
+	
 };
 menu = new Menu();

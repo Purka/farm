@@ -25,10 +25,28 @@ body {
 	float: right;
 }
 .indicator_value {
-	position: relative;
-	bottom: 0.2em;
-	right: 1em;
+
 }
 .menu {
 	float: left;
+}
+.active_menu {
+	outline: 2px solid #FF0000;
+}
+.resource {
+	width: 100px;
+	height: 100px;
+	text-align: end;
+}
+.potato {
+	  background: url('http://fermaspb.ru/uploads/.thumbs/images/goods/res-4d43b90e63868.jpg') no-repeat center center;
+}
+.banana {
+	  background: url('http://www.pl.all.biz/img/pl/catalog/middle/199459.jpeg?rrr=1') no-repeat center center;
+}
+.wheat {
+	  background: url('http://images.tomas.by/i/firms/49/23/23585/pshenica-dlya-prorashchivaniya-0-5-kg_074050d285145c0_100x100.jpg') no-repeat center center;
+}
+.cat {
+	  background: url('http://img-fotki.yandex.ru/get/9317/27433797.89/0_8d647_1716eb7d_-1-orig') no-repeat center center;
 }
