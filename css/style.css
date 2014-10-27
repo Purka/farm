@@ -30,6 +30,7 @@ body {
 .menu {
 	float: left;
 }
+<<<<<<< HEAD
 .active_menu {
 	outline: 2px solid #FF0000;
 }
@@ -49,4 +50,7 @@ body {
 }
 .cat {
 	  background: url('http://img-fotki.yandex.ru/get/9317/27433797.89/0_8d647_1716eb7d_-1-orig') no-repeat center center;
+}
+.add_cell_button {
+	float: right;
 }

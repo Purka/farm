@@ -20,7 +20,6 @@ Menu = function() {
 			}			
 		});
 		$(".menu").html(code);
-	}
-	
+	};
 };
 menu = new Menu();

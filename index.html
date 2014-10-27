@@ -20,11 +20,12 @@
         <script src="cell.js"></script>
         <script src="farm.js"></script>
         <script>
-            $(document).ready(function() {farm.draw});
+            $(document).ready(function() {
+                farm.draw;
+            });
             $('html').click(function(event) { 
                    if(!$(event.target).closest('.resource').length && !$(event.target).closest('.cell').length ){
                         menu.active_item = null;      
-                        console.log('active_item '+menu.active_item);
                    }
             });
             $(".cell").on('click', function(event){
