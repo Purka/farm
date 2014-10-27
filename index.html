@@ -25,14 +25,15 @@
             });
             $('html').click(function(event) { 
                    if(!$(event.target).closest('.resource').length && !$(event.target).closest('.cell').length ){
-                        menu.active_item = null;      
+                        menu.active_item = null;
+                        console.log('clicked on html')      
                    }
             });
-            $(".cell").on('click', function(event){
+            $(document).on('click', '.cell', function(event){
+                console.log('clicked on cell');
                 if(menu.active_item){
                     var x = $(this).data('x');
                     var y = $(this).data('y');
-                    console.log('clicked on '+x+';'+y);
                     var crop = clone(crops[menu.active_item]);
                     console.log(crop);
                     farm.cells[x][y].plant(crop);
