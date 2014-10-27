@@ -10,6 +10,8 @@ body {
 	border: 1px solid black;
 	text-align: center;
 	line-height: 100px;
+	background: url('http://solodecor.com.ua/files/products/cr-img-4e7ac320d6da5.jpeg') no-repeat center center;
+	text-align: center;
 }
 .main {
 	text-align: center;
@@ -19,7 +21,7 @@ body {
 }
 .indicator {
 	border: 1px solid black;
-	padding: 2px;
+	padding: 1px;
 }
 .indicators {
 	float: right;
@@ -31,7 +33,7 @@ body {
 	float: left;
 }
 .active_menu {
-	outline: 2px solid #FF0000;
+	outline: 3px solid #FF0000;
 }
 .resource {
 	width: 100px;
@@ -50,6 +52,15 @@ body {
 .cat {
 	  background: url('http://img-fotki.yandex.ru/get/9317/27433797.89/0_8d647_1716eb7d_-1-orig') no-repeat center center;
 }
-.add_cell_button {
+.stage1{
+	background: url('http://www.artmaterial.ru/images/image.php?src=/images/tovars/4871_1.jpg&w=100&h=100');
+	text-align: center;
+} 
+.stage2 {
+ 	background: url('http://www.pravmir.ru/wp-content/uploads/2013/08/rostok100.jpg');
+}
+.stage3 {
+	background: url('http://macroid.ru/cache/box100/86/48786.jpg');
+}.add_cell_button {
 	float: right;
 }
