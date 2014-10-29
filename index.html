@@ -13,20 +13,23 @@
         <div class="main"></div>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="storage.js"></script>
-        <script src="menu.js"></script>
         <script src="core.js"></script>
         <script src="time.js"></script>
 		<script src="crop.js"></script>
         <script src="cell.js"></script>
+        <script src="menu.js"></script>
         <script src="farm.js"></script>
+        <script src="market.js"></script>
         <script>
             $(document).ready(function() {
-                farm.draw;
+                farm = new Farm(3, 3, {}, 10);
+                farm.draw();
+                menu.drawIndicators();
+                menu.draw();
             });
             $('html').click(function(event) { 
                    if(!$(event.target).closest('.resource').length && !$(event.target).closest('.cell').length ){
-                        menu.active_item = null;
-                        console.log('clicked on html')      
+                        menu.active_item = null;  
                    }
             });
             $(document).on('click', '.cell', function(event){
@@ -35,16 +38,36 @@
                     var x = $(this).data('x');
                     var y = $(this).data('y');
                     var crop = clone(crops[menu.active_item]);
-                    console.log(crop);
                     farm.cells[x][y].plant(crop);
                 }
-                else {console.log('there is no active item')};
             });
             $(document).on('click', '.resource', function(event){
                 var name = $(this).data('crop');
                 menu.active_item = name;
                 menu.draw();      
-                console.log('active_item '+menu.active_item);
+            });
+            $(document).on('click', '.shop_name', function(event){
+                var shop = market.shops[$(this).parent().data('id')];
+                shop.open_in_market = (shop.open_in_market?false:true);
+                shop.draw();
+            });            
+            $(document).on('click', '.buy_button', function(event){
+                var $this = $(this);
+                var quantity = $this.next().val();
+                if (quantity>0) {
+                    var item = $this.parents('.shop_item').data('item');
+                    var shop = market.shops[$this.parents('.shop').data('id')];
+                    shop.buy(item, quantity);
+                };
+            });       
+            $(document).on('click', '.sell_button', function(event){
+                var $this = $(this);
+                var quantity = parseInt($this.prev().val());
+                if (quantity>0) {
+                    var item = $this.parents('.shop_item').data('item');
+                    var shop = market.shops[$this.parents('.shop').data('id')];
+                    shop.sell(item, quantity);
+                };
             });
         </script>
     </body>

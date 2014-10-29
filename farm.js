@@ -1,8 +1,10 @@
-Farm = function(x, y) {
+Farm = function(x, y, crops, money) {
 	this.x = x;
 	this.isSquare = true;
 	this.y = y;
 	this.cells = [];
+	this.money = money;
+	this.storage = new Storage(crops);
 	
 	for(var height = 0; height < this.y; height++) {
 		this.cells[height] = [];
@@ -10,6 +12,9 @@ Farm = function(x, y) {
 			this.cells[height].push(new Cell(height, width))
 		}
 	};
+	this.getMoney = function() {
+		return this.money;
+	}
 	this.isRectangle = function() {
 		return !!(this.cells[this.cells.length-1][this.x-1]);
 	}
@@ -54,14 +59,21 @@ Farm = function(x, y) {
 	};
 	this.getCellAddButtonCode = function() {
 		return '<button class="add_cell_button" onclick="farm.addCell()">Добавить клетку</button>';
-	}
+	};
+	this.getMarketEnterButton = function() {
+		return '<button class="enter_market_button" onclick="market.enter()">Рынок</button>';
+	};
 	this.draw = function() {
 		console.log('farm draw')
-		$(".main").html(this.getCode()+this.getCellAddButtonCode());
-	}
-}
+		$(".main").html(this.getCode()+this.getCellAddButtonCode()+this.getMarketEnterButton());
+	};
+	this.increaseMoney = function(amount) {
+		console.log('Increase money: ' + this.money + ' + ' + amount);
+		this.money+=amount;
+	};
+	this.decreaseMoney = function(amount) {
+		console.log('Decrease money: ' + this.money + ' - ' + amount);
+		return((this.money - amount) >=0 ? !!((this.money -= amount)>=0) : false);
+	};
+};
 
-farm = new Farm(3,3);
-farm.draw();
-menu.drawIndicators();
-menu.draw();
